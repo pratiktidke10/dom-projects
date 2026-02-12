@@ -10,7 +10,7 @@ const colors = [
   '#3366E6',
   '#999966',
   '#99FF99',
-  '#B34D4D',
+  '#c95959',
 ];
 // add circle to cursor and change it's color as cursor moves on the screen. Pick color from these array
 document.addEventListener('mousemove', function (event) {
