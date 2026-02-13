@@ -1,7 +1,21 @@
-const url = 'https://api.chucknorris.io/jokes/random';
 
-// handle this end point with XMLHttpRequest
+const jokeBtn = document.querySelector("#getJoke");
+const displayJoke = document.querySelector("#display-joke");
 
-// handle this end point with promises
+const apiURL = "https://api.chucknorris.io/jokes/random";
 
-// handle the case of race condition
+jokeBtn.addEventListener('click' , getJoke);
+
+async function getJoke() {
+    displayJoke.textContent = "Loading Joke.......🤔";
+    
+    try {
+        const response = await fetch(apiURL);
+        const data = await response.json();
+
+        displayJoke.textContent = data.value;
+    } catch (error) {
+        displayJoke.textContent = "Failed";
+        console.error(error);
+    }
+};
